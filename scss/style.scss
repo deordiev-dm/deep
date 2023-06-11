@@ -159,7 +159,6 @@ body {
 	&.load {
 		.header__logo {
 			transform: translateY(0);
-			transition-delay: 200ms;
 		}
 	}
 	// .header__socials
@@ -316,7 +315,6 @@ body {
 	&.load {
 		transform: translate(0);
 		opacity: 1;
-		transition-delay: 500ms;
 	}
 	// .intro__image
 }
@@ -349,13 +347,13 @@ body {
 		padding-right: 12.519685%; /* 159/1270 */
 
 		//! animation
-		transform: translateY(50%);
+		transform: translateY(rem(150));
 		opacity: 0;
 		transition-property: transform, opacity;
 		transition-duration: 800ms;
 		transition-timing-function: ease-out;
 		&.intersecting {
-			transform: translateY(0%);
+			transform: translateY(0);
 			opacity: 1;
 		}
 	}
@@ -461,12 +459,47 @@ body {
 				}
 			}
 		}
+		//! animation
+		opacity: 0;
+		transform: translateY(rem(200));
+		transition-property: opacity, transform;
+		transition-duration: 800ms;
+		transition-timing-function: ease-out;
+		&.intersecting {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 	// .services__images
 	&__images {
 		position: relative;
 		flex: 0 0 calc(100% - 54.80315%);
 		display: flex;
+		//! animation
+		opacity: 0;
+		transform: translateY(rem(200));
+		transition-property: opacity, transform;
+		transition-duration: 800ms;
+		transition-timing-function: ease-out;
+		.services__employee,
+		.services__phone {
+			opacity: 0;
+			transform: translateX(rem(-50));
+			transition-duration: 800ms;
+			transition-timing-function: ease-out;
+		}
+		.services__phone {
+			transform: translateX(rem(50));
+		}
+		&.intersecting {
+			opacity: 1;
+			transform: translateY(0);
+			.services__employee,
+			.services__phone {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
 	}
 	&__employee {
 		position: relative;

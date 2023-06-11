@@ -221,9 +221,6 @@ body.loaded {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition-delay: 200ms;
-       -o-transition-delay: 200ms;
-          transition-delay: 200ms;
 }
 @media (max-width: 75em) {
   .header {
@@ -400,9 +397,6 @@ body.loaded {
       -ms-transform: translate(0);
           transform: translate(0);
   opacity: 1;
-  -webkit-transition-delay: 500ms;
-       -o-transition-delay: 500ms;
-          transition-delay: 500ms;
 }
 
 .about__container {
@@ -431,9 +425,9 @@ body.loaded {
       -ms-flex: 0 1 50%;
           flex: 0 1 50%; /* 635/1270 */
   padding-right: 12.519685%; /* 159/1270 */
-  -webkit-transform: translateY(50%);
-      -ms-transform: translateY(50%);
-          transform: translateY(50%);
+  -webkit-transform: translateY(9.375rem);
+      -ms-transform: translateY(9.375rem);
+          transform: translateY(9.375rem);
   opacity: 0;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -451,9 +445,9 @@ body.loaded {
   margin-bottom: 0.9375rem;
 }
 .about__body.intersecting {
-  -webkit-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-          transform: translateY(0%);
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
   opacity: 1;
 }
 .about__image {
@@ -540,6 +534,21 @@ body.loaded {
       -ms-flex: 0 0 54.80315%;
           flex: 0 0 54.80315%; /* 696/1270 */
   padding-right: 2.5rem;
+  opacity: 0;
+  -webkit-transform: translateY(12.5rem);
+      -ms-transform: translateY(12.5rem);
+          transform: translateY(12.5rem);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: opacity, transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
 }
 .services__body > *:not(:last-child) {
   margin-bottom: 4.375rem;
@@ -554,6 +563,12 @@ body.loaded {
     margin-bottom: 1.875rem;
   }
 }
+.services__body.intersecting {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
 .services__images {
   position: relative;
   -webkit-box-flex: 0;
@@ -562,6 +577,52 @@ body.loaded {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 0;
+  -webkit-transform: translateY(12.5rem);
+      -ms-transform: translateY(12.5rem);
+          transform: translateY(12.5rem);
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: opacity, transform;
+  transition-property: opacity, transform;
+  transition-property: opacity, transform, -webkit-transform;
+  -webkit-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+.services__images .services__employee,
+.services__images .services__phone {
+  opacity: 0;
+  -webkit-transform: translateX(-3.125rem);
+      -ms-transform: translateX(-3.125rem);
+          transform: translateX(-3.125rem);
+  -webkit-transition-duration: 800ms;
+       -o-transition-duration: 800ms;
+          transition-duration: 800ms;
+  -webkit-transition-timing-function: ease-out;
+       -o-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
+}
+.services__images .services__phone {
+  -webkit-transform: translateX(3.125rem);
+      -ms-transform: translateX(3.125rem);
+          transform: translateX(3.125rem);
+}
+.services__images.intersecting {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.services__images.intersecting .services__employee,
+.services__images.intersecting .services__phone {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 .services__employee {
   position: relative;
