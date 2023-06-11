@@ -36,4 +36,23 @@ function pageLoad(e) {
 	bodyIntroImage.classList.add("load");
 
 	// animation for other elements
+	// Intersection Observer API
+	const bodyAboutSect = document.querySelector(".about__body");
+
+	let options = {
+		root: null,
+		rootMargin: "0px",
+		threshold: 0.3,
+	};
+
+	let callback = (entries, observer) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				bodyAboutSect.classList.add("intersecting");
+			}
+		});
+	};
+
+	let observer = new IntersectionObserver(callback, options);
+	observer.observe(bodyAboutSect);
 }

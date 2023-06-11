@@ -347,6 +347,17 @@ body {
 		}
 		flex: 0 1 50%; /* 635/1270 */
 		padding-right: 12.519685%; /* 159/1270 */
+
+		//! animation
+		transform: translateY(50%);
+		opacity: 0;
+		transition-property: transform, opacity;
+		transition-duration: 800ms;
+		transition-timing-function: ease-out;
+		&.intersecting {
+			transform: translateY(0%);
+			opacity: 1;
+		}
 	}
 	// .about__image
 	&__image {
