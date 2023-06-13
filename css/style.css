@@ -444,7 +444,7 @@ body.loaded {
 .about__body > *:not(:last-child) {
   margin-bottom: 0.9375rem;
 }
-.about__body.intersecting {
+.about.intersecting .about__body {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
@@ -563,7 +563,7 @@ body.loaded {
     margin-bottom: 1.875rem;
   }
 }
-.services__body.intersecting {
+.services.intersecting .services__body {
   opacity: 1;
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
@@ -578,9 +578,6 @@ body.loaded {
   display: -ms-flexbox;
   display: flex;
   opacity: 0;
-  -webkit-transform: translateY(12.5rem);
-      -ms-transform: translateY(12.5rem);
-          transform: translateY(12.5rem);
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   -o-transition-property: opacity, transform;
@@ -830,12 +827,19 @@ body.loaded {
   grid-template-columns: repeat(4, 1fr);
   gap: 1.4375rem;
 }
+.portfolio__items.intersecting .portfolio__item {
+  opacity: 1;
+}
 .portfolio__item {
   display: inline-block;
   position: relative;
   padding-top: 135%; /* 405/300 */
   overflow: hidden;
   pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 800ms;
+  -o-transition: opacity 800ms;
+  transition: opacity 800ms;
 }
 .portfolio__item img {
   width: 100%;
@@ -876,6 +880,43 @@ body.loaded {
 }
 .item-team {
   position: relative;
+  overflow: hidden;
+}
+@media (any-hover: hover) {
+  .item-team__info {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    -webkit-transition: -webkit-transform 500ms;
+    transition: -webkit-transform 500ms;
+    -o-transition: transform 500ms;
+    transition: transform 500ms;
+    transition: transform 500ms, -webkit-transform 500ms;
+  }
+  .item-team:hover .item-team__info {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@media (any-hover: none) {
+  .item-team__info {
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+    -webkit-transition: opacity 500ms, -webkit-transform 500ms;
+    transition: opacity 500ms, -webkit-transform 500ms;
+    -o-transition: transform 500ms, opacity 500ms;
+    transition: transform 500ms, opacity 500ms;
+    transition: transform 500ms, opacity 500ms, -webkit-transform 500ms;
+  }
+  .item-team.touched .item-team__info {
+    -webkit-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
 }
 .item-team__image {
   position: relative;

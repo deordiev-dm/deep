@@ -43,32 +43,67 @@ function pageLoad(e) {
 	bodyIntroImage.style.transitionDelay = `${+bodyIntroImageAnimationDelay}ms`;
 
 	// animation for other elements
-	// Intersection Observer API
-	const bodyAboutSect = document.querySelector(".about__body");
-	const bodyServices = document.querySelector(".services__body");
+	const sectionAbout = document.querySelector(".about");
+	const sectionServices = document.querySelector(".services");
 	const imagesServices = document.querySelector(".services__images");
+	const itemsPortfolio = document.querySelector(".portfolio__items");
+	const allItemsPortfolio = document.querySelectorAll(".portfolio__item");
+
+	// effect for portfolio items
+	let index = 0;
+	allItemsPortfolio.forEach((itemPortfolio) => {
+		index++;
+		itemPortfolio.style.transitionDelay = `${2 * index * 100}ms`;
+	});
+	// effect for portfolio items
+
+	//! Intersection Observer API
 	let options = {
 		root: null,
-		rootMargin: "50px",
-		threshold: 0,
+		rootMargin: "0px",
+		threshold: 0.35,
 	};
 
 	let callback = (entries, observer) => {
 		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
-				if (entry.target.classList.contains("about__body")) {
-					bodyAboutSect.classList.add("intersecting");
-				} else if (entry.target.classList.contains("services__body")) {
-					bodyServices.classList.add("intersecting");
+				if (entry.target.classList.contains("about")) {
+					sectionAbout.classList.add("intersecting");
+				} else if (entry.target.classList.contains("services")) {
+					sectionServices.classList.add("intersecting");
 				} else if (entry.target.classList.contains("services__images")) {
 					imagesServices.classList.add("intersecting");
+				} else if (entry.target.classList.contains("portfolio__items")) {
+					itemsPortfolio.classList.add("intersecting");
 				}
 			}
 		});
 	};
 
 	let observer = new IntersectionObserver(callback, options);
-	observer.observe(bodyAboutSect);
-	observer.observe(bodyServices);
+	observer.observe(sectionAbout);
+	observer.observe(sectionServices);
 	observer.observe(imagesServices);
+	observer.observe(itemsPortfolio);
+
+	const itemsTeam = document.querySelectorAll(".team__item");
+	itemsTeam.forEach((itemTeam) => {
+		itemTeam.addEventListener("touchstart", (e) => {
+			if (e.target.closest(".item-team__info")) {
+				null;
+			} else if (e.target.closest(".team__item")) {
+				itemTeam.classList.add("touched");
+			}
+		});
+	});
+
+	const buttonFooter = document.querySelector(".footer-up");
+	buttonFooter.addEventListener("click", (e) => {
+		e.preventDefault;
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: "smooth",
+		});
+	});
 }
