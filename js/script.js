@@ -106,4 +106,17 @@ function pageLoad(e) {
 			behavior: "smooth",
 		});
 	});
+
+	const socialsHeader = document.querySelector(".header__socials");
+	let previousScroll = window.scrollY;
+
+	window.addEventListener("scroll", (e) => {
+		let newScroll = window.scrollY;
+		if (newScroll > previousScroll) {
+			socialsHeader.classList.add("hide");
+		} else if (newScroll < previousScroll) {
+			socialsHeader.classList.remove("hide");
+		}
+		previousScroll = newScroll;
+	});
 }

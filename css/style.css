@@ -222,6 +222,18 @@ body.loaded {
       -ms-transform: translateY(0);
           transform: translateY(0);
 }
+.header__socials {
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  -o-transition: transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+}
+.header__socials.hide {
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
 @media (max-width: 75em) {
   .header {
     padding: 0.625rem 0rem 0.625rem 0.9375rem;

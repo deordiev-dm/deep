@@ -163,6 +163,10 @@ body {
 	}
 	// .header__socials
 	&__socials {
+		transition: transform 500ms;
+		&.hide {
+			transform: translateY(-100%);
+		}
 	}
 	@media (max-width: em(1200)) {
 		padding: rem(10) rem(0) rem(10) rem(15);
