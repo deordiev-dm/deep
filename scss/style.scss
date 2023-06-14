@@ -8,7 +8,7 @@
 // variables =======================================================
 :root {
 	--colorMain: #6257fe;
-	----colorMainA: #6257fecc;
+	--colorMainA: #6257fecc;
 	--colorAccent: #100c46;
 	--colorAccentA: #100c46cc;
 	--colorWhite: #ffffff;
@@ -820,7 +820,7 @@ body {
 		left: 0;
 		width: 100%;
 		padding: rem(11) rem(13) rem(12) rem(18);
-		background-color: var(----colorMainA);
+		background-color: var(--colorMainA);
 		color: var(--colorWhite);
 	}
 }

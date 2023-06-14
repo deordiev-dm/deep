@@ -55,7 +55,7 @@ button {
 
 :root {
   --colorMain: #6257fe;
-  ----colorMainA: #6257fecc;
+  --colorMainA: #6257fecc;
   --colorAccent: #100c46;
   --colorAccentA: #100c46cc;
   --colorWhite: #ffffff;
@@ -949,7 +949,7 @@ body.loaded {
   left: 0;
   width: 100%;
   padding: 0.6875rem 0.8125rem 0.75rem 1.125rem;
-  background-color: var(----colorMainA);
+  background-color: var(--colorMainA);
   color: var(--colorWhite);
 }
 
