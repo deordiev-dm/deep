@@ -1226,4 +1226,13 @@ body {
 			width: rem(40);
 		}
 	}
+	@media (any-hover: hover) {
+		transition: all 300ms;
+		&:hover {
+			background-color: #100c46;
+		}
+		&:focus {
+			transform: scale(1.1);
+		}
+	}
 }
